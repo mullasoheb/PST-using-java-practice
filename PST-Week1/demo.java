@@ -5,14 +5,20 @@ class demo{
         System.out.print("Enter element to find in array: ");
         int input = sc.nextInt();
         int[] arr ={2,4,3,7,9};
+        boolean found = false;
         int n = arr.length;
-        
-        if(input>0 && input<n){
-            System.out.println("Element found at index " +input + " is: "+arr[input]+" ");
-        }else{
+        for(int i=0; i<n; i++){
+            if(arr[i]==input){
+                System.out.println("Element found at index " +i + " is: "+arr[i]+" ");
+                found = true;
+                break;
+            }
+            
+        }
+        if(!found){
             System.out.println("Element not found!");
         }
-            
         
     }
+
 }
