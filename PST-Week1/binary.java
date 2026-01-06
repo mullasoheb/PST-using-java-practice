@@ -1,32 +1,39 @@
 import java.util.Scanner;
-class binary{
+
+class binary {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // System.out.print("Enter Array elements in sorting order: ");
-        int[] arr = {2,3,5,7,9,12,15};
+
+        int[] arr = {2, 3, 5, 7, 9, 12, 15};
         int n = arr.length;
-        System.out.println("Enter target Element: ");
+
+        System.out.print("Enter target Element: ");
         int target = sc.nextInt();
-        boolean found = false;
+
         int low = 0;
-        int high = n-1;
-        while(low <= high){
-            int mid = n/2;
-            if(arr[mid] == target){
-                System.out.println("Element found at index " +mid);
+        int high = n - 1;
+        boolean found = false;
+
+        while (low <= high) {
+            int mid = (low + high) / 2;
+
+            if (arr[mid] == target) {
+                System.out.println("Element found at index " + mid);
                 found = true;
                 break;
-            }
-            else if(target > arr[mid]){
-                low = mid+1; 
-            }
-            else{
-                high = mid-1;
+            } 
+            else if (target > arr[mid]) {
+                low = mid + 1;
+            } 
+            else {
+                high = mid - 1;
             }
         }
-        if(!found){
+
+        if (!found) {
             System.out.println("Element not Found!");
         }
+
         sc.close();
     }
 }
